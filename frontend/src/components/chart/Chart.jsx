@@ -17,7 +17,7 @@ function Chart({title,data,dataKey}) {
         <ResponsiveContainer width='100%' aspect={4 / 1}>
             <LineChart data={data}>
                 <XAxis dataKey={dataKey} stroke="#839AA8"/>
-                <Line type="monotone" dataKey="Active User" stroke="#839AA8"/>
+                <Line type="monotone" dataKey={dataKey} stroke="#839AA8"/>
                 <Tooltip/>
                 <Legend/>
             </LineChart>
