@@ -4,6 +4,8 @@ import { DataGrid } from '@mui/x-data-grid';
 import { userRows } from '../../Data';
 import {DeleteOutline} from '@mui/icons-material';
 import { Link } from "react-router-dom";
+import Topbar from "../../components/topbar/Topbar";
+import Sidebar from "../../components/sidebar/Sidebar";
 
 
 function UserList() {
@@ -57,15 +59,24 @@ function UserList() {
         setData(data.filter((item)=> item.id !== id));
     }
   return (
+    <>
+            <Topbar/>
+
+        <div className="container">
+   
+               <Sidebar/>
     <div className='userList'>
         <DataGrid
         rows={data}
         columns={columns}
         pageSize={8}
-        rowsPerPageOptions={[5]}
+        rowsPerPageOptions={[8]}
         checkboxSelection
-      />
+        />
     </div>
+        </div>
+    
+    </>
   )
 }
 

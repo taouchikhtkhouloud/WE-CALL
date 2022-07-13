@@ -5,9 +5,16 @@ import './Home.css'
 import {Userdata} from '../../Data'
 import WidgetSmall from '../../components/widgetsmall/Widget'
 import WidgetLarge from '../../components/widgetlarge/Widget'
+import Topbar from "../../components/topbar/Topbar";
+import Sidebar from "../../components/sidebar/Sidebar";
 
 function Home() {
   return (
+    <>
+            <Topbar/>
+     <div className="container">
+
+            <Sidebar/>
     <div className='home'>
     <Featuredinfo/>
     <Chart data={Userdata} title="User Analytics" dataKey="Active User"/>
@@ -16,6 +23,8 @@ function Home() {
       <WidgetLarge/>
     </div>
     </div>
+     </div>
+    </>
   )
 }
 

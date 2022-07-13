@@ -8,9 +8,16 @@ import {
   } from '@mui/icons-material';
   import { Link } from "react-router-dom";
   import "./user.css";
-  
+  import Topbar from "../../components/topbar/Topbar";
+import Sidebar from "../../components/sidebar/Sidebar";
+
   export default function User() {
     return (
+      <>
+     <Topbar/>
+     <div className="container">
+
+            <Sidebar/>
       <div className="user">
         <div className="userTitleContainer">
           <h1 className="userTitle">Edit User</h1>
@@ -74,7 +81,7 @@ import {
                     type="text"
                     placeholder="Anna Becker"
                     className="userUpdateInput"
-                  />
+                    />
                 </div>
                 <div className="userUpdateItem">
                   <label>Email</label>
@@ -82,7 +89,7 @@ import {
                     type="text"
                     placeholder="annabeck99@gmail.com"
                     className="userUpdateInput"
-                  />
+                    />
                 </div>
                 <div className="userUpdateItem">
                   <label>Phone</label>
@@ -90,7 +97,7 @@ import {
                     type="text"
                     placeholder="+1 123 456 67"
                     className="userUpdateInput"
-                  />
+                    />
                 </div>
                 <div className="userUpdateItem">
                   <label>Address</label>
@@ -98,7 +105,7 @@ import {
                     type="text"
                     placeholder="New York | USA"
                     className="userUpdateInput"
-                  />
+                    />
                 </div>
               </div>
               <div className="userUpdateRight">
@@ -119,5 +126,7 @@ import {
           </div>
         </div>
       </div>
+                    </div>
+                    </>
     );
   }

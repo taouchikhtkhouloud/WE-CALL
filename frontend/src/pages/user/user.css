@@ -153,3 +153,8 @@
       color: white;
       font-weight: 600;
   }
+  .container{
+    display:flex;
+    
+    margin-top: 10px;
+}

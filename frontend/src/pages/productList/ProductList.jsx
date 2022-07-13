@@ -4,6 +4,10 @@ import { productRows } from '../../Data';
 import {DeleteOutline} from '@mui/icons-material';
 import { Link } from "react-router-dom";
 import './ProductList.css'
+import Topbar from "../../components/topbar/Topbar";
+import Sidebar from "../../components/sidebar/Sidebar";
+
+
 function ProductList() {
     const [data,setData]=useState(productRows);
     const handleDelete=(id)=>{
@@ -55,6 +59,11 @@ function ProductList() {
         },
     ];
   return (
+    <>
+            <Topbar/>
+     <div className="container">
+
+            <Sidebar/>
     <div className='productList'>
         <DataGrid
         rows={data}
@@ -62,8 +71,10 @@ function ProductList() {
         pageSize={8}
         rowsPerPageOptions={[5]}
         checkboxSelection
-      />
+        />
     </div>
+     </div>
+        </>
   )
 }
 
