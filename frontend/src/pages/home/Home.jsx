@@ -1,31 +1,34 @@
-import React from 'react'
-import Chart from '../../components/chart/Chart'
-import Featuredinfo from '../../components/featuredinfo/Featuredinfo'
-import './Home.css'
-import {Userdata} from '../../Data'
-import WidgetSmall from '../../components/widgetsmall/Widget'
-import WidgetLarge from '../../components/widgetlarge/Widget'
-import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
+import Navbar from "../../components/navbar/Navbar";
+import "./home.scss";
+import Widget from "../../components/widget/Widget";
+import Featured from "../../components/featured/Featured";
+import Chart from "../../components/chart/Chart";
+import Table from "../../components/table/Table";
 
-function Home() {
+const Home = () => {
   return (
-    <>
-            <Topbar/>
-     <div className="container">
-
-            <Sidebar/>
-    <div className='home'>
-    <Featuredinfo/>
-    <Chart data={Userdata} title="User Analytics" dataKey="Active User"/>
-    <div className="homeWidgets">
-      <WidgetSmall/>
-      <WidgetLarge/>
+    <div className="home">
+      <Sidebar />
+      <div className="homeContainer">
+        <Navbar />
+        <div className="widgets">
+          <Widget type="user" />
+          <Widget type="abonnes" />
+          <Widget type="recharges" />
+          
+        </div>
+        <div className="charts">
+         {/*  <Featured /> */}
+          <Chart title="Revenus des 6 derniers mois " aspect={2 / 1} />
+        </div>
+        <div className="listContainer">
+          <div className="listTitle">les derniers appels effectués</div>
+          <Table />
+        </div>
+      </div>
     </div>
-    </div>
-     </div>
-    </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
