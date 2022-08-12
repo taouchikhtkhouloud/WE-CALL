@@ -35,7 +35,7 @@ const NewRecharge = ({ title }) => {
        
       }
 
-      axios.post('http://localhost:80/server/recharge/save', data).then(function(response){
+      axios.post('http://localhost:80/server/recharge/save2', data).then(function(response){
         console.log(response.data);
         navigate('/recharges');
     });

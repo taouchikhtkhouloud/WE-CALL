@@ -7,17 +7,25 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import { useState, useEffect } from "react";
+import axios from 'axios';
 
-const data = [
-  { name: "January", Total: 1200 },
-  { name: "February", Total: 2100 },
-  { name: "March", Total: 800 },
-  { name: "April", Total: 1600 },
-  { name: "May", Total: 900 },
-  { name: "June", Total: 1700 },
-];
 
 const Chart = ({ aspect, title }) => {
+  const [data, setData] = useState([]);
+  
+  useEffect(() => {
+      getData();    
+  }, []);
+  
+  function getData(){
+  
+  
+  axios.get('http://localhost:80/server/revenus/').then(res=>{
+      console.log(res.data);
+      setData(res.data);
+  });
+  }
   return (
     <div className="chart">
       <div className="title">{title}</div>

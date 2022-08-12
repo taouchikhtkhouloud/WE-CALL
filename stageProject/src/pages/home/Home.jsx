@@ -7,6 +7,7 @@ import Chart from "../../components/chart/Chart";
 import Table from "../../components/table/Table";
 import axios from 'axios';
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 const Home = () => {
   const [utilisateurs, setUtilisateurs] = useState([]);
   const [nbreUtilisateur, setNbreUtilisateur] = useState([]);
@@ -50,11 +51,17 @@ useEffect(() => {
           
         </div>
         <div className="charts">
-         {/*  <Featured /> */}
+        <div className="datatableTitle">
+   
+        <Link to="/users/new" className="link">
+          redefinir le revenue
+        </Link>
           <Chart title="Revenus des 6 derniers mois " aspect={2 / 1} />
+      </div>
+         {/*  <Featured /> */}
         </div>
         <div className="listContainer">
-          <div className="listTitle">les derniers appels effectués</div>
+          <div className="listTitle">les CDR des derniers appels effectués</div>
           <Table />
         </div>
       </div>
