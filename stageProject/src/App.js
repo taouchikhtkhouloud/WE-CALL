@@ -17,6 +17,7 @@ import NewRecharge from "./pages/new/NewRecharge";
 import NewChannel from "./pages/new/NewChannel";
 import DestList from "./pages/userlist/DestList";
 import NewDest from "./pages/new/NewDest";
+import NewRevenue from "./pages/new/NewRevenue";
 function App() {
   const { darkMode } = useContext(DarkModeContext);
 
@@ -28,7 +29,7 @@ function App() {
           <Route path="/">
             <Route index element={<Login />} />
             <Route path="home" element={<ProtectedRoute> <Home /></ProtectedRoute>} />
-                        <Route path="home" element={<ProtectedRoute> <Home /></ProtectedRoute>} />
+                        <Route path="updateRevenue" element={<ProtectedRoute> <NewRevenue /></ProtectedRoute>} />
 
             <Route path="users">
               <Route index element={<List />} />

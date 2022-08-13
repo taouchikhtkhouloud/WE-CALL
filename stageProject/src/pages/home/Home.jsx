@@ -53,7 +53,7 @@ useEffect(() => {
         <div className="charts">
         <div className="datatableTitle">
    
-        <Link to="/users/new" className="link">
+        <Link to="/updateRevenue" className="link">
           redefinir le revenue
         </Link>
           <Chart title="Revenus des 6 derniers mois " aspect={2 / 1} />
