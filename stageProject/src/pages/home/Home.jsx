@@ -56,7 +56,7 @@ useEffect(() => {
         <Link to="/updateRevenue" className="link">
           redefinir le revenue
         </Link>
-          <Chart title="Revenus des 6 derniers mois " aspect={2 / 1} />
+          <Chart title="Revenus des mois " aspect={2 / 1} />
       </div>
          {/*  <Featured /> */}
         </div>

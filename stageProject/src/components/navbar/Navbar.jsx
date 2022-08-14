@@ -51,7 +51,6 @@ const Navbar = () => {
             />
           </div>
     
-          <Link to='/profile' style={{ textDecoration: "none" }}>
 
           <div className="item">
             <img
@@ -64,7 +63,6 @@ const Navbar = () => {
               className="avatar"
             />
           </div>
-          </Link>
         </div>
       </div>
     </div>

@@ -12,7 +12,11 @@ const NewRevenue = () => {
     const navigate = useNavigate();
 
     const [inputs, setInputs] = useState([]);
-    const [valeur, setValeur] = useState([]);
+    const [total, setTotal] = useState({
+        id:'',
+        Total:'',
+
+    });
 
     const [id,setId]=useState([]);
     const selectOption = (event, value) => {
@@ -36,16 +40,19 @@ const NewRevenue = () => {
     }
     
 
-    const handleChange = (event) => {
-        const name = event.target.name;
-        const value = event.target.value;
-        setValeur(values => ({...values, [name]: value}));
-        console.log(valeur);
+    const handleInput = (e) => {
+        e.persist();
+        setTotal({...total, [e.target.name]: e.target.value })
+        console.log(total.Total);
     }
     const handleSubmit = (event) => {
         event.preventDefault();
-
-        axios.put(`http://localhost:80/server/revenus/edit`,id, valeur).then(function(response){
+        const data ={
+            id:id,
+            Total:total.Total,
+        }
+        console.log(data);
+        axios.put(`http://localhost:80/server/revenus/edit`,data).then(function(response){
             console.log(response.data);
             navigate('/home');
         });
@@ -88,7 +95,7 @@ const NewRevenue = () => {
                                 <label>Total: </label>
                             </th>
                             <td> 
-                                <input  type="text" name="Total" onChange={handleChange} />
+                                <input  type="text" name="Total" onChange={handleInput} value={total.Total}/>
                             </td>
                         </tr>
                         <tr>

@@ -2,15 +2,25 @@ import "./single.scss";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import Chart from "../../components/chart/Chart";
-import List from "../../components/table/Table";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams, Link } from "react-router-dom";
+import { DataGrid } from '@mui/x-data-grid';
+import Table from 'react-bootstrap/Table';
+
 const Single = () => {
+
+   
+  
+  const {userID} = useParams();
+
+
+
+
+
 
   const [inputs, setInputs] = useState([]);
 
-  const {userID} = useParams();
   console.log(userID);
   useEffect(() => {
     getUtilisateurs();
@@ -36,6 +46,7 @@ const handleSubmit = (event) => {
     });
     
 }
+
   return (
     <div className="single">
       <Sidebar />
@@ -81,16 +92,12 @@ const handleSubmit = (event) => {
               </div>
             </div>
           </div>
-          <div className="right">
-            <Chart aspect={3 / 1} title="User Spending ( Last 6 Months)" />
-          </div>
+          
         </div>
-        <div className="bottom">
-        <h1 className="title">Last Transactions</h1>
-          <List/>
+        
         </div>
       </div>
-    </div>
+   
   );
 };
 
